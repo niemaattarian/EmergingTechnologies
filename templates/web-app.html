@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- Adapted from:
+https://www.codicode.com/art/how_to_draw_on_a_html5_canvas_with_a_mouse.aspx
+https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
+-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Number Predictions</title>
+    </head>
+    <body onload="InitThis();">
+        <script src="{{ url_for('static', filename='generate.js') }}"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <div>
+            <div>
+                <canvas id="myCanvas" width="500" height="200" style="border:2px solid black" ></canvas>
+            </div>
+            <div>
+                <button onclick="clearArea()">Clear</button>
+            </div>
+            <div>
+                <button onclick="predict()">Predict</button>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
