@@ -1,8 +1,8 @@
+import cv2
 import flask as f1
-
 from flask import Flask, render_template
-
 import base64
+
 app = Flask(__name__)
 
 # Add a route for the web-page
@@ -22,8 +22,12 @@ def uploadimage():
     # Saving the image
     with open("numberimage.png", "wb") as f:
         f.write(decodedimage)
+    # Resizing the image
+    image = cv2.imread("numberimage.png")
+    resizeimage = cv2.resize(image, (28, 28))
+    cv2.imwrite("numberimage.png", resizeimage)
 
-    return render_template('web-app.html', 200)
+    return render_template('web-app.html'), 200
 
 if __name__ == "__main__":
     app.run()

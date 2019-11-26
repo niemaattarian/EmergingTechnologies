@@ -12,6 +12,10 @@ function InitThis() {
     canvas = document.getElementById('myCanvas')
     ctx = canvas.getContext("2d");
 
+    ctx.strokeStyle = "white";
+    ctx.fillStyle = "black";
+
+
     $('#myCanvas').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
