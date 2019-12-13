@@ -12,11 +12,13 @@ function InitThis() {
     canvas = document.getElementById('myCanvas')
     ctx = canvas.getContext("2d");
 
+    // I set the draw line to white. This improved prediction accuracy.
     ctx.strokeStyle = "white";
-    ctx.lineWidth = 8;
+    // This was also the case with line width
+    ctx.lineWidth = 10;
+    // The canvas is set to black to contrast the the white draw line
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, 280, 280);
-
 
     $('#myCanvas').mousedown(function (e) {
         mousePressed = true;
@@ -37,6 +39,7 @@ function InitThis() {
         mousePressed = false;
     });
 
+    // Predicts the number drawn via predict button
      $(document).ready(function (e) {
         $("#predict").click(function (e) {
 
@@ -46,11 +49,14 @@ function InitThis() {
             })
         });
     })
+    // Logs the number prediction to the console
     console.log(canvas.toDataURL());
 }
 
+// Draw function
 function Draw(x, y, isDown) {
     if (isDown) {
+        // Begins the line path when drawing
         ctx.beginPath();
         ctx.strokeStyle = $('#selColor').val();
         ctx.lineWidth = $('#selWidth').val();
@@ -63,6 +69,7 @@ function Draw(x, y, isDown) {
     lastX = x; lastY = y;
 }
 
+// Clear area function to remove any white drawing and set the canvas back to black
 function clearArea() {
     // Use the identity matrix while clearing the canvas
     ctx.setTransform(1, 0, 0, 1, 0, 0);
