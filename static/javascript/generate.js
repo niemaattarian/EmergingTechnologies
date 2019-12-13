@@ -22,6 +22,7 @@ function InitThis() {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, 280, 280);
 
+    // Mouse Functions
     $('#myCanvas').mousedown(function (e) {
         mousePressed = true;
         Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
