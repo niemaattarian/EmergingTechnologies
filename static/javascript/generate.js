@@ -1,3 +1,5 @@
+/*Niema Attarian - G00346901*/
+
 /* Adapted from:
 https://www.codicode.com/art/how_to_draw_on_a_html5_canvas_with_a_mouse.aspx
 https://www.html5canvastutorials.com/labs/html5-canvas-paint-application/
@@ -46,7 +48,9 @@ function InitThis() {
             console.log(canvas.toDataURL());
 
             $.post("/uploadImage", {"numberImage": canvas.toDataURL()}, function(data){
+                // Logging result to console
                 console.log(data);
+                // Logging result to Web
                 $("#result").empty().append(data);
             })
         });
