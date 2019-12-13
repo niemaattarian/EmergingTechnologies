@@ -41,9 +41,9 @@ The Flask page was very useful I didn't know much regarding Flask before this pr
 In conclusion, I found that there was extensive information and documentation readily available which was very useful when it came to the understanding of Tensorflow, Keras, Flask and how Neural Networks work. There is also a lot of content regarding improving your neural network and making it more pleasing for the user.
 
 ## References
-I included many references within my code for convenience. I also included references within my research as clickable links highlighted in blue.
-https://docs.python.org/3/library/base64.html
-https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d
-https://stackoverflow.com/questions/13198131/how-to-save-an-html5-canvas-as-an-image-on-a-server/13198699#13198699
-https://codereview.stackexchange.com/questions/132914/crop-black-border-of-image-using-numpy
-https://keras.io/examples/mnist_cnn/
+I included many references within my code for convenience. I also included references within my research as clickable links highlighted in blue.<br>
+https://docs.python.org/3/library/base64.html <br>
+https://towardsdatascience.com/image-classification-in-10-minutes-with-mnist-dataset-54c35b77a38d <br>
+https://stackoverflow.com/questions/13198131/how-to-save-an-html5-canvas-as-an-image-on-a-server/13198699#13198699 <br>
+https://codereview.stackexchange.com/questions/132914/crop-black-border-of-image-using-numpy <br>
+https://keras.io/examples/mnist_cnn/ <br>
