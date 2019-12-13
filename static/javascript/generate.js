@@ -46,6 +46,8 @@ function InitThis() {
             console.log(canvas.toDataURL());
 
             $.post("/uploadImage", {"numberImage": canvas.toDataURL()}, function(data){
+                console.log(data);
+                $("#result").empty().append(data);
             })
         });
     })

@@ -14,6 +14,7 @@ def web():
     # This method creates and object out of the HTML and returns on on the browser
     return render_template('web-app.html')
 
+# Adapted from https://web.microsoftstream.com/video/d792fd34-356d-4b7c-80f8-936c5d2877e1?referrer=https:%2F%2Flearnonline.gmit.ie%2Fcourse%2Fview.php%3Fid%3D135
 # Add a route for the web-page
 @app.route('/uploadImage', methods=['POST'])
 def uploadimage():
@@ -33,19 +34,20 @@ def uploadimage():
     # Writing the image to file as 28 x 28
     cv2.imwrite("numberimage.png", resizeimage)
 
-    return render_template('web-app.html'), 200
+    # Predicting the image
+    number_image = cv2.imread("numberimage.png", cv2.IMREAD_GRAYSCALE)
+    # Normalising the data
+    number_image = number_image / 255
+    number_image = number_image.reshape(1, 784)
+    # Loads the image into the model
+    new_model = tf.keras.models.load_model('number_image.h5')
+    # Predicts the number
+    predictions = new_model.predict(number_image)
 
-# Predicting the image
-number_image = cv2.imread("numberimage.png", cv2.IMREAD_GRAYSCALE)
-# Normalising the data
-number_image = number_image / 255
-number_image = number_image.reshape(1, 784)
-# Loads the image into the model
-new_model = tf.keras.models.load_model('number_image.h5')
-# Predicts the number
-predictions = new_model.predict(number_image)
+    print(np.argmax(predictions[0]))
 
-print(np.argmax(predictions[0]))
+    # returns the predictions tov be output in the web-app
+    return str(np.argmax(predictions))
 
 if __name__ == "__main__":
     app.run()
